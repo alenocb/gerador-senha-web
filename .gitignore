@@ -31,6 +31,7 @@ htmlcov/
 # Local environment files
 .env
 .env.*
+# Keep the safe configuration template versioned.
 !.env.example
 
 # Operating system files

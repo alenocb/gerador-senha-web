@@ -5,11 +5,11 @@
   "type": "module",
   "description": "CLI e aplicacao web para gerar senhas seguras",
   "scripts": {
-    "start": "node src/gerador_senha/server.js",
+    "start": "node --env-file=.env src/gerador_senha/server.js",
     "cli": "node src/gerador_senha/cli.js",
     "test": "node --test"
   },
   "engines": {
-    "node": ">=20"
+    "node": ">=20.6"
   }
 }
