@@ -1,0 +1,15 @@
+{
+  "name": "gerador-senha",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "CLI e aplicacao web para gerar senhas seguras",
+  "scripts": {
+    "start": "node src/gerador_senha/server.js",
+    "cli": "node src/gerador_senha/cli.js",
+    "test": "node --test"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}

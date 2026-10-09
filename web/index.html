@@ -1,0 +1,114 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#f2f6f3">
+    <meta name="description" content="Gere uma senha aleatoria segura com as opcoes que voce escolher.">
+    <title>Gerador de Senhas</title>
+    <link rel="stylesheet" href="/styles.css">
+    <script type="module" src="/app.js"></script>
+  </head>
+  <body>
+    <div class="app-frame">
+      <header class="topbar">
+        <a class="wordmark" href="/" aria-label="Gerador de senhas, inicio">
+          <span class="wordmark-icon" aria-hidden="true">G</span>
+          <span>GERADOR<span class="wordmark-divider">/</span>SENHAS</span>
+        </a>
+        <p class="local-status"><span class="status-dot" aria-hidden="true"></span>GERACAO LOCAL</p>
+      </header>
+
+      <main>
+        <section class="page-heading" aria-labelledby="page-title">
+          <p class="eyebrow">SENHAS SOB SEU CONTROLE</p>
+          <h1 id="page-title">Gerador de <span>senhas.</span></h1>
+        </section>
+
+        <div class="workspace">
+          <form class="settings" id="password-form">
+            <div class="section-heading">
+              <span class="section-index">01</span>
+              <h2>Composicao</h2>
+            </div>
+
+            <div class="length-control">
+              <div class="control-heading">
+                <label for="length">Comprimento</label>
+                <output id="length-value" for="length">16</output>
+              </div>
+              <input id="length" name="length" type="range" min="4" max="64" value="16">
+              <div class="range-ends"><span>4</span><span>64 caracteres</span></div>
+            </div>
+
+            <fieldset class="character-options">
+              <legend>Grupos de caracteres</legend>
+              <label class="option-row" for="lowercase">
+                <span class="option-copy"><span class="option-symbol">a-z</span><span>Minusculas</span></span>
+                <input id="lowercase" name="lowercase" type="checkbox" checked>
+              </label>
+              <label class="option-row" for="uppercase">
+                <span class="option-copy"><span class="option-symbol">A-Z</span><span>Maiusculas</span></span>
+                <input id="uppercase" name="uppercase" type="checkbox" checked>
+              </label>
+              <label class="option-row" for="digits">
+                <span class="option-copy"><span class="option-symbol">0-9</span><span>Numeros</span></span>
+                <input id="digits" name="digits" type="checkbox" checked>
+              </label>
+              <label class="option-row" for="specialCharacters">
+                <span class="option-copy"><span class="option-symbol">!?+</span><span>Especiais</span></span>
+                <input id="specialCharacters" name="specialCharacters" type="checkbox">
+              </label>
+            </fieldset>
+
+            <button class="generate-button" type="submit">
+              <span>Gerar senha</span><span class="button-arrow" aria-hidden="true">&#8599;</span>
+            </button>
+            <p class="form-message" id="form-message" role="alert" hidden></p>
+          </form>
+
+          <section class="result" aria-labelledby="result-title">
+            <div class="section-heading result-heading">
+              <span class="section-index">02</span>
+              <h2 id="result-title">Sua senha</h2>
+              <span class="result-ready"><span class="status-dot" aria-hidden="true"></span>PRONTA</span>
+            </div>
+
+            <div class="password-output" aria-live="polite" aria-atomic="true">
+              <p class="password-text" id="password-output">Gerando...</p>
+            </div>
+
+            <div class="result-actions">
+              <button class="copy-button" id="copy-button" type="button" disabled>
+                <span class="copy-mark" aria-hidden="true">&#9633;</span>
+                <span id="copy-label">Copiar senha</span>
+              </button>
+              <p class="result-length" id="result-length">16 caracteres</p>
+            </div>
+            <div class="strength-panel" aria-live="polite" aria-atomic="true">
+              <div class="strength-heading">
+                <span>Forca estimada</span>
+                <span class="strength-value" id="strength-value" data-level="strong">Calculando</span>
+              </div>
+              <div class="strength-track" role="meter" aria-label="Forca estimada da senha" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0">
+                <span class="strength-fill" id="strength-fill"></span>
+              </div>
+              <p class="strength-details" id="strength-details">Estimativa baseada no tamanho e nos grupos selecionados.</p>
+            </div>
+            <p class="copy-message" id="copy-message" role="status" aria-live="polite"></p>
+
+            <div class="security-note">
+              <span class="security-mark" aria-hidden="true">+</span>
+              <p>A senha e criada localmente com geracao criptografica. Ela nao e armazenada.</p>
+            </div>
+          </section>
+        </div>
+      </main>
+
+      <footer class="footer-line">
+        <span>GERADOR DE SENHAS</span>
+        <span>NODE.JS <span aria-hidden="true">/</span> WEB</span>
+      </footer>
+    </div>
+  </body>
+</html>
